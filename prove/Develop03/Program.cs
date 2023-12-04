@@ -23,12 +23,12 @@ class Reference
 
     public Reference(string reference)
     {
-        // Implementa la lógica para parsear la referencia aquí
+
         string[] parts = reference.Split(':');
 
         if (parts.Length != 2)
         {
-            throw new ArgumentException("La referencia debe tener el formato 'Libro Capítulo:Versículo' o 'Libro Capítulo:Versículo-Versículo'");
+            throw new ArgumentException("The reference must be in the format 'Book Chapter:Verse' or 'Book Chapter:Verse-Verse'");
         }
 
         Book = parts[0];
@@ -47,7 +47,7 @@ class Reference
         }
         else
         {
-            throw new ArgumentException("La referencia debe tener el formato 'Libro Capítulo:Versículo' o 'Libro Capítulo:Versículo-Versículo'");
+            throw new ArgumentException("The reference must be in the format 'Book Chapter:Verse' or 'Book Chapter:Verse-Verse'");
         }
     }
 }
@@ -98,16 +98,16 @@ class Program
         {
             scripture.Display();
 
-            Console.WriteLine("Presiona Enter para ocultar una palabra o escribe 'salir' para terminar:");
+            Console.WriteLine("Press Enter to hide a word or type 'exit' to finish:");
             var input = Console.ReadLine();
 
-            if (input.ToLower() == "salir")
+            if (input.ToLower() == "exit")
                 break;
 
             scripture.HideRandomWord();
         }
 
-        Console.WriteLine("Todas las palabras han sido ocultadas. Programa finalizado.");
+        Console.WriteLine("All the words have been hidden. Program completed.");
     }
 }
 
